@@ -1,0 +1,118 @@
+.intro {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  color: #fff8ec;
+  background: #101c2c;
+  border-block: clamp(8px, 2.1vh, 24px) solid #090e15;
+}
+.sky-frame, .sky-pan, .sky-plate, .sky-near, #cloud-field, .sky-grade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.sky-frame {z-index: -1; overflow: hidden;}
+.sky-pan {
+  inset: -2%;
+  transform: translate3d(var(--look-x, 0px),var(--look-y, 0px),0);
+  transition: transform 1.2s ease-out;
+}
+.sky-plate,.sky-near {
+  background: url('/dusk-sky.webp') 63% 54% / cover no-repeat;
+  animation: sky-flight 25s ease-in-out infinite alternate;
+}
+.sky-near {
+  mask-image: linear-gradient(transparent 62%, black 96%);
+  animation-name: cloud-passage;
+}
+#cloud-field {
+  opacity: .16;
+  mix-blend-mode: screen;
+  mask-image: linear-gradient(transparent 56%, #000 100%);
+}
+.sky-grade {
+  background: linear-gradient(90deg, #080f219e 0%, #0c14233d 48%, transparent 73%),
+              linear-gradient(0deg, #080d19a1 0%, transparent 25%, transparent 85%, #0b15253d);
+}
+.intro-content {
+  width: min(100%, 1640px);
+  margin-inline: auto;
+  padding: clamp(70px,13vh,150px) clamp(22px,8vw,140px);
+}
+#intro-title {
+  margin: 0 0 0 -.052em;
+  font: 400 clamp(56px,11.6vw,206px)/1.02 Georgia,'Times New Roman',serif;
+  letter-spacing: -.075em;
+  color: #fff6e6;
+  text-shadow: 0 3px 30px #09112061;
+  animation: title-reveal 1.65s cubic-bezier(.17,.78,.23,1) both;
+}
+.intro-credit {
+  display:flex;align-items:center;gap:.5em;
+  margin: clamp(12px,2.5vh,24px) 0 0; color: #fff2dd;
+  font: italic 16px/1.5 Georgia,serif;
+  animation: credit-reveal 1.55s ease-out both;
+}
+.intro-credit::before {content:'';width:42px;height:1px;background:#edc08e;margin-right:6px;}
+.intro-credit strong {font:600 clamp(11px,1.2vw,16px)/1.5 system-ui,sans-serif;letter-spacing:.2em;}
+.intro-links {display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:clamp(28px,5vh,55px);}
+.intro-links a,.cloud-motion {
+  color:#fff5e6;text-decoration:none;display:inline-flex;align-items:center;gap:20px;
+  padding:12px 18px;border:1px solid #e5d7bc80;border-radius:6px;
+  background:#111b2c99;font:600 14px/1.4 system-ui,sans-serif;
+}
+.intro-links a:first-child {background:#f6e7cd;border-color:#f6e7cd;color:#162034;}
+.intro-links a:hover,.cloud-motion:hover {background:#fff2d9;color:#131e30;}
+.intro-links a:focus-visible,.cloud-motion:focus-visible {outline:3px solid #ffc879;outline-offset:4px;}
+.cloud-motion {position:absolute;right:max(18px,4vw);bottom:max(16px,4vh);font-size:12px;border-radius:24px;padding:8px 14px;}
+.intro:not(.in-flight) .sky-plate,.intro:not(.in-flight) .sky-near {animation-play-state:paused;}
+@keyframes sky-flight {from {transform:scale(1.02) translateX(0);} to {transform:scale(1.11) translateX(-1.25%);}}
+@keyframes cloud-passage {from {transform:scale(1.025) translateY(0);} to {transform:scale(1.22) translate(-1.8%,2%);}}
+@keyframes title-reveal {from {opacity:.14;filter:blur(7px);transform:translateY(14px);letter-spacing:-.035em;} to {opacity:1;filter:blur(0);transform:none;letter-spacing:-.075em;}}
+@keyframes credit-reveal {from {opacity:.18;transform:translateY(6px);} to {opacity:1;transform:none;}}
+@media(max-width:600px) {
+  .sky-plate,.sky-near {background-position:67% 52%;}
+  .intro-content {padding-top:22vh;}
+  #intro-title {font-size:clamp(56px,16.7vw,100px);}
+  .intro-links {gap:9px;}
+  .intro-credit::before {width:26px;}
+}
+@media(prefers-reduced-motion:reduce) {
+  #intro-title,.intro-credit {animation:none;}
+  .sky-pan {transition:none;}
+}
+
+/* Foreground cloud banks pass the camera while the horizon stays farther away. */
+#cloud-flight {position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.sky-pan {
+  inset:-4%;
+  transform:translate3d(var(--look-x,0px),calc(var(--look-y,0px) + var(--cloud-descent,0px)),0) scale(var(--flight-zoom,1));
+  transform-origin:68% 56%;
+  transition:transform .25s ease-out;
+}
+.intro-content {transform:translateY(var(--title-lift,0px));}
+.reading-progress {
+  height:3px;position:fixed;top:0;left:0;right:0;z-index:12;pointer-events:none;
+  background:linear-gradient(90deg,#ecae7e,#efbd8e);
+  transform-origin:left center;transform:scaleX(var(--page-progress,0));
+}
+.motion-enabled .scroll-entrant {animation:section-arrival .58s cubic-bezier(.2,.68,.27,1) backwards;}
+.motion-enabled .game-card:nth-child(2).scroll-entrant {animation-delay:.07s;}
+.motion-enabled .scroll-entrant:focus-within {animation:none;}
+@keyframes section-arrival {
+  from {opacity:.46;translate:0 20px;}
+  to {opacity:1;translate:0 0;}
+}
+/* Artwork can drift inside its card while the button stays in place. */
+@supports (animation-timeline:view()) {
+  .motion-enabled .game-card canvas {
+    animation:art-pan linear both;animation-timeline:view();
+    animation-range:entry 0% exit 100%;
+  }
+  @keyframes art-pan {from {object-position:50% 34%;} to {object-position:50% 68%;}}
+}
+@media(prefers-reduced-motion:reduce) {.sky-pan {transition:none;}}

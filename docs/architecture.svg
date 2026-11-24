@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 590" role="img" aria-labelledby="title desc">
+<title id="title">How AeroPinch turns a hand into a controller</title>
+<desc id="desc">Three isometric planes connect camera capture, local hand tracking, and the studio and game controls.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1" gradientUnits="objectBoundingBox" gradientTransform="scale(1)"><stop stop-color="#121c34"/><stop offset="1" stop-color="#182031"/></linearGradient><linearGradient id="plate"><stop stop-color="#243951"/><stop offset="1" stop-color="#39425a"/></linearGradient></defs>
+<rect width="1000" height="590" rx="18" fill="url(#bg)"/>
+<g font-family="system-ui,Arial,sans-serif">
+<text x="43" y="49" fill="#ffbb90" font-weight="600" font-size="14" letter-spacing="2">AEROPINCH  /  SYSTEM ARCHITECTURE</text>
+<text x="43" y="101" fill="#f1f5ff" font-weight="700" font-size="40" letter-spacing="0">From webcam to game control</text>
+<g transform="matrix(1 .24 -.88 .46 197 426)">
+<path d="M0 116H206V130H0Z" fill="#455771"/><path d="M206 0L219 5V124L206 130Z" fill="#142034"/><rect width="206" height="116" rx="5" fill="url(#plate)" stroke="#97a8c0" stroke-width="2"/>
+<path d="M83.5 18 L22 100" stroke="#a1c6e3" stroke-width="2" stroke-dasharray="" fill="none"/>
+<path d="M98.0 18 L80 100" stroke="#a1c6e3" stroke-width="2" stroke-dasharray="" fill="none"/>
+<path d="M111.75 18 L135 100" stroke="#a1c6e3" stroke-width="2" stroke-dasharray="" fill="none"/>
+<path d="M125.0 18 L188 100" stroke="#a1c6e3" stroke-width="2" stroke-dasharray="" fill="none"/>
+<path d="M67.1 45 L140.9 45" stroke="#6d8ca6" stroke-width="1" stroke-dasharray="" fill="none"/>
+<path d="M49.1 65 L158.9 65" stroke="#6d8ca6" stroke-width="1" stroke-dasharray="" fill="none"/>
+<path d="M23.0 94 L185.0 94" stroke="#6d8ca6" stroke-width="1" stroke-dasharray="" fill="none"/>
+<ellipse cx="109" cy="69" rx="6" ry="7" fill="#ffbd92"/><path d="M108 75l-7 10 11 8m-5-15 10 6 8-3" stroke="#ffbd92" fill="none" stroke-width="4" stroke-linecap="round"/>
+</g>
+<g transform="matrix(1 .24 -.88 .46 197 289)">
+<path d="M0 116H206V130H0Z" fill="#455771"/><path d="M206 0L219 5V124L206 130Z" fill="#142034"/><rect width="206" height="116" rx="5" fill="url(#plate)" stroke="#97a8c0" stroke-width="2"/>
+<path d="M100 110 L74 92 L59 78 L48 68 L37 58" fill="none" stroke="#f5ba91" stroke-width="3"/>
+<path d="M100 110 L78 62 L71 43 L67 27 L64 15" fill="none" stroke="#f5ba91" stroke-width="3"/>
+<path d="M78 62 L96 54 L115 56 L135 66 L100 110" fill="none" stroke="#f5ba91" stroke-width="3"/>
+<path d="M96 54 L95 33 L96 16 L97 5" fill="none" stroke="#f5ba91" stroke-width="3"/>
+<path d="M115 56 L119 36 L122 22 L125 13" fill="none" stroke="#f5ba91" stroke-width="3"/>
+<path d="M135 66 L144 54 L152 43 L158 34" fill="none" stroke="#f5ba91" stroke-width="3"/>
+<circle cx="100" cy="110" r="2.8" fill="#ffe0c5"/>
+<circle cx="74" cy="92" r="2.8" fill="#ffe0c5"/>
+<circle cx="59" cy="78" r="2.8" fill="#ffe0c5"/>
+<circle cx="48" cy="68" r="2.8" fill="#ffe0c5"/>
+<circle cx="37" cy="58" r="2.8" fill="#ffe0c5"/>
+<circle cx="78" cy="62" r="2.8" fill="#ffe0c5"/>
+<circle cx="71" cy="43" r="2.8" fill="#ffe0c5"/>
+<circle cx="67" cy="27" r="2.8" fill="#ffe0c5"/>
+<circle cx="64" cy="15" r="2.8" fill="#ffe0c5"/>
+<circle cx="96" cy="54" r="2.8" fill="#ffe0c5"/>
+<circle cx="95" cy="33" r="2.8" fill="#ffe0c5"/>
+<circle cx="96" cy="16" r="2.8" fill="#ffe0c5"/>
+<circle cx="97" cy="5" r="2.8" fill="#ffe0c5"/>
+<circle cx="115" cy="56" r="2.8" fill="#ffe0c5"/>
+<circle cx="119" cy="36" r="2.8" fill="#ffe0c5"/>
+<circle cx="122" cy="22" r="2.8" fill="#ffe0c5"/>
+<circle cx="125" cy="13" r="2.8" fill="#ffe0c5"/>
+<circle cx="135" cy="66" r="2.8" fill="#ffe0c5"/>
+<circle cx="144" cy="54" r="2.8" fill="#ffe0c5"/>
+<circle cx="152" cy="43" r="2.8" fill="#ffe0c5"/>
+<circle cx="158" cy="34" r="2.8" fill="#ffe0c5"/>
+</g>
+<g transform="matrix(1 .24 -.88 .46 197 152)">
+<path d="M0 116H206V130H0Z" fill="#455771"/><path d="M206 0L219 5V124L206 130Z" fill="#142034"/><rect width="206" height="116" rx="5" fill="url(#plate)" stroke="#97a8c0" stroke-width="2"/>
+<rect x="36" y="8" width="135" height="96" rx="8" fill="#1d3042" stroke="#91aabd" stroke-width="3"/>
+<path d="M65 100L55 86Q48 72 58 72L72 81L62 49Q62 43 67 44L81 67L75 31Q77 23 82 29L93 61L94 22Q98 14 102 22L106 59L112 32Q117 26 120 34L119 67L129 50Q136 46 136 53L126 85L111 100Z" fill="#a6c3d3"/>
+</g>
+<path d="M396 204 L451 204" stroke="#899aab" stroke-width="1" stroke-dasharray="" fill="none"/>
+<circle cx="396" cy="204" r="3" fill="#ffbe98"/>
+<text x="471" y="209" fill="#ffbe98" font-weight="600" font-size="14" letter-spacing="1">01</text>
+<text x="518" y="210" fill="#edf2fb" font-weight="650" font-size="25" letter-spacing="0">Capture</text>
+<text x="518" y="240" fill="#c0d0e1" font-weight="400" font-size="16" letter-spacing="0">The webcam supplies frames after permission.</text>
+<path d="M396 341 L451 341" stroke="#899aab" stroke-width="1" stroke-dasharray="" fill="none"/>
+<circle cx="396" cy="341" r="3" fill="#ffbe98"/>
+<text x="471" y="346" fill="#ffbe98" font-weight="600" font-size="14" letter-spacing="1">02</text>
+<text x="518" y="347" fill="#edf2fb" font-weight="650" font-size="25" letter-spacing="0">Track one hand</text>
+<text x="518" y="377" fill="#c0d0e1" font-weight="400" font-size="16" letter-spacing="0">MediaPipe estimates 21 landmarks in the browser.</text>
+<path d="M396 478 L451 478" stroke="#899aab" stroke-width="1" stroke-dasharray="" fill="none"/>
+<circle cx="396" cy="478" r="3" fill="#ffbe98"/>
+<text x="471" y="483" fill="#ffbe98" font-weight="600" font-size="14" letter-spacing="1">03</text>
+<text x="518" y="484" fill="#edf2fb" font-weight="650" font-size="25" letter-spacing="0">Apply input</text>
+<text x="518" y="514" fill="#c0d0e1" font-weight="400" font-size="16" letter-spacing="0">Studio interprets pointing, pinching and poses.</text>
+<text x="518" y="536" fill="#c0d0e1" font-weight="400" font-size="16" letter-spacing="0">Games map hand movement to aim or steering.</text>
+<path d="M187 230 L187 292" stroke="#9cb2c6" stroke-width="1" stroke-dasharray="4 5" fill="none"/>
+<path d="M187 367 L187 429" stroke="#9cb2c6" stroke-width="1" stroke-dasharray="4 5" fill="none"/>
+<path d="M306 230 L306 292" stroke="#9cb2c6" stroke-width="1" stroke-dasharray="4 5" fill="none"/>
+<path d="M306 367 L306 429" stroke="#9cb2c6" stroke-width="1" stroke-dasharray="4 5" fill="none"/>
+</g></svg>

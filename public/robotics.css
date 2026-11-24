@@ -1,0 +1,40 @@
+.robot-shell {
+  position:relative; isolation:isolate; display:flow-root; background:#070909;
+}
+.robot-backdrop {
+  position:sticky; top:0; height:100vh; height:100svh;
+  margin-bottom:-100vh; margin-bottom:-100svh; overflow:hidden; pointer-events:none;
+  background:#09090a;
+}
+.robot-plate,#servo-scene {position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.robot-plate {
+  inset:-4%;width:auto;height:auto;
+  background:linear-gradient(0deg,#090b0cc2,transparent 46%),url('/servo-studio.webp') 61% 38% / cover;
+  opacity:.77;transform:translate3d(var(--servo-x,0px),var(--servo-y,0px),0) scale(1.02);
+}
+.robot-shell main {position:relative;display:flow-root;}
+.robot-shell .heading {
+  position:relative; min-height:clamp(170px,25vh,270px); margin:0 0 24px;
+  align-items:flex-end; padding:26px 0 20px;
+}
+.robot-shell .heading h2,.games-head h2,.robot-shell .heading p,.games-head p {text-shadow:0 2px 12px #000,0 1px 4px #000;}
+.robot-shell .heading p,.games-head p {color:#d1d2d4;}
+.studio-tools {display:flex; align-items:center; flex-wrap:wrap; gap:8px;}
+#studio-motion {font:12px/1.5 ui-monospace,monospace;border-radius:24px;background:#131415ee;border-color:#5a5c60;padding:7px 12px;}
+#studio .panel,#studio .practice {background:#121314f1;border-color:#84878d66;box-shadow:0 12px 32px #0004;}
+#studio .camera {background:transparent;}
+#studio .camera .panelhead,#studio .cambar {background:#131415f5;}
+#studio #view {background-color:#131416b3;background-image:linear-gradient(#bec2c912 1px,transparent 1px),linear-gradient(90deg,#bec2c912 1px,transparent 1px),radial-gradient(ellipse at center,#1a1c1faf,transparent);background-size:28px 28px,28px 28px,100% 100%;}
+#studio #view:has(#standby[hidden]) {background:#0b0c0d;}
+#studio #standby {text-shadow:0 1px 10px #000;}
+#studio .game-card {border-color:#84878d75;}
+@media(max-width:760px) {
+  .robot-shell .heading {min-height:190px;align-items:flex-start;justify-content:flex-end;flex-direction:column;gap:8px;}
+  .robot-plate {background-position:67% 15%;opacity:.65;}
+  .studio-tools .session {margin-top:0;align-self:center;}
+  #studio .heading p {margin:6px 0;}
+}
+#articulated-hand {display:block;width:100%;height:100%;object-fit:cover;object-position:61% 38%;opacity:0;}
+#articulated-hand.posed {opacity:1;}
+.robot-plate::after {content:"";position:absolute;inset:0;background:linear-gradient(0deg,#090b0cc2,transparent 46%);pointer-events:none;}
+@media(max-width:760px){#articulated-hand {object-position:67% 15%;}}

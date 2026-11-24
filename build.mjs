@@ -1,0 +1,21 @@
+import { cp, mkdir, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+const output = 'dist';
+await mkdir(output, {recursive: true});
+await cp('public', output, {recursive: true});
+// Serve the intro scripts locally so visitors only connect to this site.
+const effects = output + '/fx';
+await mkdir(effects, {recursive: true});
+await cp('node_modules/three/build/three.min.js', effects + '/three.min.js');
+await cp('node_modules/vanta/dist/vanta.clouds.min.js', effects + '/vanta.clouds.min.js');
+await cp('node_modules/three/LICENSE', effects + '/three-license.txt');
+await cp('node_modules/vanta/LICENSE.md', effects + '/vanta-license.txt');
+const vision = 'node_modules/@mediapipe/tasks-vision';
+await cp(vision + '/vision_bundle.mjs', output + '/vision.mjs');
+await cp(vision + '/wasm', output + '/wasm', {recursive: true});
+const url = 'https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task';
+const response = await fetch(url, {signal: AbortSignal.timeout(90000)});
+if (!response.ok) throw Error('Hand model download failed: ' + response.status);
+const bytes = new Uint8Array(await response.arrayBuffer());
+if (createHash('sha256').update(bytes).digest('hex') !== 'fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1') throw Error('Invalid hand model');
+await writeFile(output + '/hand_landmarker.task', bytes);
